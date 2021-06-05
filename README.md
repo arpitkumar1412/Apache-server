@@ -20,3 +20,5 @@
 10. Server takes care of zombie processes.
 
 11. httperf or ab tool can be used to generate traffic to test web server.
+
+12. Further design explanation and features can be found in the describe.pdf file.
