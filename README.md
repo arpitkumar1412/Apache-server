@@ -1,4 +1,7 @@
 # Apache-server
+To run the server, use gcc main.c. Then, use ./a.out <MinSpareServer> <MaxSpareServer> <MaxClient> <MaxRequestPerClient>. There description can be found below or in describe.pdf
+
+#Design
 1. Parent process starts up the server and creates a process pool with each child calling accept() call.
 
 2. Server should be self-regulated as per the incoming traffic. Parent should regulate the process pool according to the parameters specified: MinSpareServers, MaxSpareServers. These parameters are specified as command line arguments to the server.
@@ -21,6 +24,6 @@
 
 11. Further design explanation and features can be found in the describe.pdf file.
 
-#testing
+#Testing
 1. ab tool was used for testing the server. Running server is tested using the cmd - "ab -n 3 -c 3 http://127.0.0.1:4243/", where -n is Number of requests to perform and -c is Number of multiple requests to make at a time. 127.0.0.1 is the home IP address and 4243 is the port used by the server.
 2. ab tool only provides iterative request features, i.e. only 1 request per time. To test the capability of server handling multiple requests at a time, we use test.c, a program that generates multiple concurrent requests.  
