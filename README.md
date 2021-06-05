@@ -19,6 +19,8 @@
 
 10. Server takes care of zombie processes.
 
-11. httperf or ab tool can be used to generate traffic to test web server.
+11. Further design explanation and features can be found in the describe.pdf file.
 
-12. Further design explanation and features can be found in the describe.pdf file.
+#testing
+1. ab tool was used for testing the server. Running server is tested using the cmd - "ab -n 3 -c 3 http://127.0.0.1:4243/", where -n is Number of requests to perform and -c is Number of multiple requests to make at a time. 127.0.0.1 is the home IP address and 4243 is the port used by the server.
+2. ab tool only provides iterative request features, i.e. only 1 request per time. To test the capability of server handling multiple requests at a time, we use test.c, a program that generates multiple concurrent requests.  
